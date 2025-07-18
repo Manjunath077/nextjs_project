@@ -9,6 +9,10 @@ export const userNameValidation = z
 export const emailValidation = z
     .string()
     .email({ message: "Invalid email address" })
+    .regex(
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        "Email must be a valid format"
+    );
 
 export const passwordValidation = z
     .string()
